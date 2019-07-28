@@ -1,0 +1,25 @@
+
+//mainClassName = 'com.hu.xiaohang.HelloWorld'
+
+// tag::repositories[]
+// end::repositories[]
+version '1.0.0-SNAPSHOT'
+
+// tag::jar[]
+// end::jar[]
+
+dependencies {
+
+    compile(
+            'commons-logging:commons-logging:1.1.1',
+            'commons-lang:commons-lang:2.4',
+            'com.alibaba:fastjson:1.2.8.sec01',
+            'org.apache.commons:commons-jexl:2.0.1',
+            'org.freemarker:freemarker:2.3.18',
+    )
+    testCompile(
+            'javacc:javacc:4.1',
+    )
+
+}
+// end::dependencies[]

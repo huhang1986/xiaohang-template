@@ -1,0 +1,24 @@
+${if false}
+    out if content
+${elseif false}
+    else if content
+${else}
+	${if true}
+		inner if content
+	${/if}
+    else content
+${/if}
+
+${if msgid == 123654}
+    if el content
+${/if}
+${if msgid==null}
+   msgid is null!
+${else}
+   msgid is not null!
+${/if}
+
+${if test2!=null && test2==true}21${/if}
+${if test2==true && test2!=null}22${/if}
+
+${if undefinevar}undefinevar${/if}

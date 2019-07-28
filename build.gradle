@@ -1,0 +1,62 @@
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    apply plugin: 'maven-publish'
+
+    version = '1.0.0-SNAPSHOT'
+
+    group 'com.xiaohang'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+//定义版本号
+    ext {
+//        springBootVar = '1.4.5.RELEASE'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+                // more goes in here
+            }
+        }
+    }
+}
+
+// 所有子项目的通用配置
+subprojects {
+
+    jar {
+    }
+
+    configurations {
+        // 所有需要忽略的包定义在此
+        //all*.exclude group: 'commons-httpclient'
+        //all*.exclude group: 'commons-logging'
+        //all*.exclude group: 'commons-beanutils', module: 'commons-beanutils'
+    }
+
+    dependencies {
+        // 测试依赖
+        testCompile(
+                "junit:junit:4.12",
+                "org.springframework:spring-test:3.1.0.RELEASE"
+        )
+    }
+
+    // 显示当前项目下所有用于 compile 的 jar.
+//    task listJars(description: 'Display all compile jars.') << {
+//        configurations.compile.each { File file -> println file.name }
+//    }
+}
+

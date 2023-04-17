@@ -8,8 +8,8 @@ allprojects {
 
     group 'com.xiaohang'
 
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
+    sourceCompatibility = 1.9
+    targetCompatibility = 1.9
 
     [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
 
@@ -48,7 +48,7 @@ subprojects {
 
     dependencies {
         // 测试依赖
-        testCompile(
+        testImplementation(
                 "junit:junit:4.12",
                 "org.springframework:spring-test:3.1.0.RELEASE"
         )
